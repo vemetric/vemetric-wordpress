@@ -31,7 +31,7 @@ class ScriptLoader {
             VMTRC_SCRIPT_HANDLE,
             $script_url,
             [],
-            '0.9.0', // script-version
+            '0.9.0', //scriptversion
             false
         );
 

@@ -66,7 +66,7 @@ jobs:
           echo "Updating to version: ${{ github.event.inputs.version }}"
           sed -i "s/Version:     .*/Version:     ${{ github.event.inputs.version }}/" vemetric.php
           sed -i "s/Stable tag: .*/Stable tag: ${{ github.event.inputs.version }}/" readme.txt
-          sed -i "s/'.*', // script-version/'${{ github.event.inputs.version }}', // script-version/" src/Frontend/ScriptLoader.php
+          sed -i.bak "s/'.*', \/\/scriptversion/'${{ github.event.inputs.version }}', \/\/scriptversion/" src/Frontend/ScriptLoader.php && rm src/Frontend/ScriptLoader.php.bak
           echo "Updated version in file:"
           grep " * Version:     " vemetric.php
 
