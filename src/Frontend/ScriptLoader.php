@@ -50,39 +50,19 @@ class ScriptLoader {
         add_filter(
             'script_loader_tag',
             function ( $tag, $handle, $src ) use ( $token, $host, $track_pageviews, $track_outbound, $track_data_attributes, $mask_paths ) {
-
                 if ( $handle !== VMTRC_SCRIPT_HANDLE ) {
                     return $tag; // early-out for other scripts
                 }
 
-                $attr  = ' data-token="' . esc_attr( $token ) . '"';
-
-                if ( !empty( $host ) ) {
-                    $attr .= ' data-host="' . esc_attr( $host ) . '"';
-                }
-
-                if ( $track_pageviews === false ) {
-                    $attr .= ' data-track-page-views="false"';
-                }
-
-                // Add outbound flag only when explicitly disabled
-                if ( $track_outbound === false ) {
-                    $attr .= ' data-track-outbound-links="false"';
-                }
-
-                if ( $track_data_attributes === false ) {
-                    $attr .= ' data-track-data-attributes="false"';
-                }
-
-                if ( !empty( $mask_paths ) ) {
-                    $maskPaths = explode( ',', $mask_paths );
-                    $maskPaths = array_map( 'trim', $maskPaths );
-                    $maskPaths = '["' . implode( '","', $maskPaths ) . '"]';
-                    $attr .= ' data-mask-paths="' . esc_attr( $maskPaths ) . '"';
-                }
-
-                // Inject attributes immediately after opening "<script"
-                return str_replace( '<script ', '<script defer' . $attr . ' ', $tag );
+                $attr = ScriptTagBuilder::buildAttributes(
+                    $token,
+                    $host,
+                    $track_pageviews,
+                    $track_outbound,
+                    $track_data_attributes,
+                    $mask_paths
+                );
+                return str_replace( '<script src="', '<script defer ' . $attr . ' src="', $tag );
             },
             10,
             3
