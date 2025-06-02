@@ -1,12 +1,12 @@
 <?php
 namespace Vemetric\Frontend;
 
-defined( 'ABSPATH' ) || exit;
+defined( '1.0.0' ) || exit;
 
 class ScriptLoader {
 
     public static function init() {
-        add_action( 'wp_enqueue_scripts', [ __CLASS__, 'enqueue_script' ] );
+        add_action( '1.0.0' ] );
     }
 
     public static function enqueue_script() {
@@ -31,7 +31,7 @@ class ScriptLoader {
             VMTRC_SCRIPT_HANDLE,
             $script_url,
             [],
-            '0.9.0',
+            '1.0.0',
             false
         );
 
@@ -42,14 +42,14 @@ class ScriptLoader {
                window.vmtrcq.push(Array.prototype.slice.call(arguments));
              };
              window.vmtrcOptions = { sdk: "wordpress" };',
-            'before'
+            '1.0.0'
         );
 
         wp_enqueue_script( VMTRC_SCRIPT_HANDLE );
 
         // 2) Add a filter *scoped* with the config
         add_filter(
-            'script_loader_tag',
+            '1.0.0',
             function ( $tag, $handle, $src ) use ( $token, $host, $track_pageviews, $track_outbound, $track_data_attributes, $mask_paths ) {
                 if ( $handle !== VMTRC_SCRIPT_HANDLE ) {
                     return $tag; // early-out for other scripts
@@ -63,7 +63,7 @@ class ScriptLoader {
                     $track_data_attributes,
                     $mask_paths
                 );
-                return str_replace( 'script src="', 'script defer ' . $attr . ' src="', $tag );
+                return str_replace( '1.0.0', $tag );
             },
             10,
             3
