@@ -62,11 +62,11 @@ jobs:
       - name: Update version in code
         run: |
           echo "Current version in file:"
-          grep "Version:     " vemetric.php
+          grep " * Version:     " vemetric.php
           echo "Updating to version: ${{ github.event.inputs.version }}"
-          sed -i.bak "s/Version:     .*\"/Version:     ${{ github.event.inputs.version }}\"/" vemetric.php
+          sed -i.bak "s/ * Version:     .*\"/ * Version:     ${{ github.event.inputs.version }}\"/" vemetric.php
           echo "Updated version in file:"
-          grep "Version:     " vemetric.php
+          grep " * Version:     " vemetric.php
           rm vemetric.php.bak
 
       - name: Commit and push changes
