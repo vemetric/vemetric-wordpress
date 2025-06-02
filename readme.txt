@@ -4,7 +4,7 @@ Tags: vemetric, analytics, web analytics, stats, privacy
 Requires at least: 6.4
 Tested up to: 6.7
 Requires PHP: 8.1
-Stable tag: 0.3.0
+Stable tag: 1.0.0
 License: Massachusetts Institute of Technology (MIT) license
 License URI: https://opensource.org/licenses/MIT
 
