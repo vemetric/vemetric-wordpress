@@ -1,0 +1,8 @@
+# Composer
+/vendor/
+
+# WordPress build artefacts
+*.log
+.DS_Store
+.idea/
+.vscode/
