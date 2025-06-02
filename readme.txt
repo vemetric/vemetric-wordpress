@@ -2,10 +2,10 @@
 Contributors: vemetric
 Tags: vemetric, analytics, web analytics, stats, privacy
 Requires at least: 6.4
-Tested up to: 6.7
+Tested up to: 6.8
 Requires PHP: 8.1
-Stable tag: 1.0.0
-License: Massachusetts Institute of Technology (MIT) license
+Stable tag: 0.9.0
+License: MIT
 License URI: https://opensource.org/licenses/MIT
 
 Vemetric is a lightweight, privacy-first analytics tool that helps you understand how your users are interacting with your website.
