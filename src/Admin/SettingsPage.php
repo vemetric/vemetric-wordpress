@@ -77,8 +77,8 @@ class SettingsPage {
                     <tr>
                         <th scope="row"><label for="vmtrc_token">Project Token <span class="required">*</span></label></th>
                         <td>
-                            <input name="<?php echo VMTRC_OPTION_TOKEN; ?>" type="text" id="vmtrc_token"
-                                   value="<?php echo $token; ?>" class="regular-text code"
+                            <input name="<?php echo esc_attr(VMTRC_OPTION_TOKEN); ?>" type="text" id="vmtrc_token"
+                                   value="<?php echo esc_attr($token); ?>" class="regular-text code"
                                    placeholder="YOUR_PROJECT_TOKEN">
                             <p class="description">Find it in your Vemetric dashboard.</p>
                         </td>
@@ -86,8 +86,8 @@ class SettingsPage {
                     <tr>
                         <th scope="row"><label for="vmtrc_host">Host</label></th>
                         <td>
-                            <input name="<?php echo VMTRC_OPTION_HOST; ?>" type="text" id="vmtrc_host"
-                                   value="<?php echo $host; ?>" class="regular-text code"
+                            <input name="<?php echo esc_attr(VMTRC_OPTION_HOST); ?>" type="text" id="vmtrc_host"
+                                   value="<?php echo esc_attr($host); ?>" class="regular-text code"
                                    placeholder="https://hub.vemetric.com">
                             <p class="description">The host to use for the Vemetric API. Necessary if you want to <a href="https://vemetric.com/docs/advanced-guides/using-a-proxy" target="_blank">use a proxy for tracking your data</a> via your own domain.</p>
                         </td>
@@ -95,9 +95,9 @@ class SettingsPage {
                     <tr>
                         <th scope="row"><label for="vmtrc_script_url">Script URL</label></th>
                         <td>
-                            <input name="<?php echo VMTRC_OPTION_SCRIPT_URL; ?>" type="text" id="vmtrc_script_url"
-                                   value="<?php echo $script_url; ?>" class="regular-text code"
-                                   placeholder="<?php echo VMTRC_SCRIPT_URL; ?>">
+                            <input name="<?php echo esc_attr(VMTRC_OPTION_SCRIPT_URL); ?>" type="text" id="vmtrc_script_url"
+                                   value="<?php echo esc_attr($script_url); ?>" class="regular-text code"
+                                   placeholder="<?php echo esc_attr(VMTRC_SCRIPT_URL); ?>">
                             <p class="description">The URL of the Vemetric script. You can use a custom URL if you want to use a proxy to serve the script via your own domain.</p>
                         </td>
                     </tr>
@@ -105,7 +105,7 @@ class SettingsPage {
                         <th scope="row"><label for="vmtrc_track_pageviews">Track pageviews</label></th>
                         <td>
                         <label>
-                        <input id="vmtrc_track_pageviews" type="checkbox" name="<?php echo VMTRC_OPTION_TRACK_PAGEVIEWS; ?>"
+                        <input id="vmtrc_track_pageviews" type="checkbox" name="<?php echo esc_attr(VMTRC_OPTION_TRACK_PAGEVIEWS); ?>"
                                 value="1" <?php checked( $track_pageviews ); ?> />
                         <span class="description">Automatically record pageviews when the user navigates on your site.</span>
                         </label>
@@ -115,7 +115,7 @@ class SettingsPage {
                         <th scope="row"><label for="vmtrc_track_outbound_links">Track outbound link clicks</label></th>
                         <td>
                         <label>
-                        <input id="vmtrc_track_outbound_links" type="checkbox" name="<?php echo VMTRC_OPTION_TRACK_OUTBOUND_LINKS; ?>"
+                        <input id="vmtrc_track_outbound_links" type="checkbox" name="<?php echo esc_attr(VMTRC_OPTION_TRACK_OUTBOUND_LINKS); ?>"
                                 value="1" <?php checked( $track_outbound_links ); ?> />
                         <span class="description">Automatically record link clicks to external websites.</span>
                         </label>
@@ -125,7 +125,7 @@ class SettingsPage {
                         <th scope="row"><label for="vmtrc_track_data_attributes">Track data attributes</label></th>
                         <td>
                         <label>
-                        <input id="vmtrc_track_data_attributes" type="checkbox" name="<?php echo VMTRC_OPTION_TRACK_DATA_ATTRIBUTES; ?>"
+                        <input id="vmtrc_track_data_attributes" type="checkbox" name="<?php echo esc_attr(VMTRC_OPTION_TRACK_DATA_ATTRIBUTES); ?>"
                                 value="1" <?php checked( $track_data_attributes ); ?> />
                         <span class="description">Enables <a href="https://vemetric.com/docs/product-analytics/tracking-custom-events#data-attributes" target="_blank">tracking of custom events via data attributes</a>.</span>
                         </label>
@@ -134,8 +134,8 @@ class SettingsPage {
                     <tr>
                         <th scope="row"><label for="vmtrc_mask_paths">Mask paths</label></th>
                         <td>
-                            <input name="<?php echo VMTRC_OPTION_MASK_PATHS; ?>" type="text" id="vmtrc_mask_paths"
-                                   value="<?php echo $mask_paths; ?>" class="regular-text code">
+                            <input name="<?php echo esc_attr(VMTRC_OPTION_MASK_PATHS); ?>" type="text" id="vmtrc_mask_paths"
+                                   value="<?php echo esc_attr($mask_paths); ?>" class="regular-text code">
                             <p class="description">A comma-separated list of paths to mask. For example: <code>/blog/*,/project/*/user/*</code>.</p>
                         </td>
                     </tr>

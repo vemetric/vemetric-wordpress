@@ -64,14 +64,14 @@ jobs:
           echo "Current version in file:"
           grep " * Version:     " vemetric.php
           echo "Updating to version: ${{ github.event.inputs.version }}"
-          sed -i.bak "s/Version:     .*/Version:     ${{ github.event.inputs.version }}/" vemetric.php
+          sed -i "s/Version:     .*/Version:     ${{ github.event.inputs.version }}/" vemetric.php
+          sed -i "s/Stable tag: .*/Stable tag: ${{ github.event.inputs.version }}/" readme.txt
           echo "Updated version in file:"
           grep " * Version:     " vemetric.php
-          rm vemetric.php.bak
 
       - name: Commit and push changes
         run: |
-          git add vemetric.php
+          git add vemetric.php readme.txt
           git commit -m "chore: bump version to ${{ github.event.inputs.version }}"
           git push origin main
 

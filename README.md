@@ -1,4 +1,4 @@
-# Vemetric Wordpress Plugin
+# The Vemetric Wordpress Plugin
 
 This is the official Plugin to add Vemetric to your Wordpress site.
 
