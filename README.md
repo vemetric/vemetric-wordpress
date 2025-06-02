@@ -1,3 +1,5 @@
+![Vemetric Wordpress Plugin](https://github.com/user-attachments/assets/781544b0-d1aa-4d43-813d-a5609d20d23b)
+
 # The Vemetric Wordpress Plugin
 
 This is the official Plugin to add Vemetric to your Wordpress site.
