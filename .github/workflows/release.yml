@@ -1,0 +1,95 @@
+name: Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Version to release (e.g., 0.0.1)"
+        required: true
+        type: string
+      message:
+        description: "Message to include in the release"
+        required: true
+        type: string
+
+# Add permissions block
+permissions:
+  contents: write # Required for creating releases
+  packages: write # Required for creating packages
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.1"
+          extensions: curl
+          coverage: none
+
+      - name: Install dependencies
+        run: composer install --prefer-dist --no-interaction --no-progress
+
+      - name: Composer validate
+        run: composer validate --strict
+
+      - name: PHPUnit
+        run: composer test
+
+  publish:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.1"
+          extensions: curl
+          coverage: none
+
+      - name: Configure Git
+        run: |
+          git config --global user.name 'GitHub Actions'
+          git config --global user.email 'github-actions@github.com'
+
+      - name: Update version in code
+        run: |
+          echo "Current version in file:"
+          grep "Version:     " vemetric.php
+          echo "Updating to version: ${{ github.event.inputs.version }}"
+          sed -i.bak "s/Version:     = \".*\"/Version:     = \"${{ github.event.inputs.version }}\"/" vemetric.php
+          echo "Updated version in file:"
+          grep "Version:     " vemetric.php
+          rm vemetric.php.bak
+
+      - name: Commit and push changes
+        run: |
+          git add vemetric.php
+          git commit -m "chore: bump version to ${{ github.event.inputs.version }}"
+          git push origin main
+
+      - name: Install dependencies
+        run: composer install --prefer-dist --no-interaction --no-progress --no-dev
+
+      - name: Create zip file
+        run: |
+          zip -r vemetric-${{ github.event.inputs.version }}.zip . -x "tests/*" "phpunit.xml" ".git/*" ".github/*" "*.zip"
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: ${{ github.event.inputs.version }}
+          name: ${{ github.event.inputs.version }}
+          draft: false
+          prerelease: false
+          body: ${{ github.event.inputs.message }}
+          files: vemetric-${{ github.event.inputs.version }}.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
