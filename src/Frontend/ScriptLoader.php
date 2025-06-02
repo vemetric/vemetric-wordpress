@@ -31,7 +31,8 @@ class ScriptLoader {
             VMTRC_SCRIPT_HANDLE,
             $script_url,
             [],
-            null
+            '0.9.0',
+            false
         );
 
         wp_add_inline_script(
