@@ -3,7 +3,7 @@
  * Plugin Name: Vemetric
  * Plugin URI:  https://vemetric.com
  * Description: The Official Vemetric Plugin to add lightweight, privacy-first analytics to your WordPress site. Injects the Vemetric script on the front-end and (optionally) enables you to track events in the PHP backend.
- * Version:     0.1.0
+ * Version:     0.2.0
  * Author:      Vemetric
  * Author URI:  https://vemetric.com
  * License:     MIT
