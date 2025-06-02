@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Vemetric
  * Plugin URI:  https://vemetric.com
- * Description: The Official Vemetric Plugin to add lightweight, privacy-first analytics to your WordPress site. Injects the Vemetric script on the front-end and (optionally) enables you to track events in the PHP backend.
+ * Description: Vemetric adds lightweight, privacy-first analytics to your WordPress site. Injects the script on the front-end and (optionally) enables you to track events in the PHP backend.
  * Version:     0.2.0
  * Author:      Vemetric
  * Author URI:  https://vemetric.com
@@ -12,7 +12,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-const VMTRC_OPTION_TOKEN   = 'vemetric_project_token';
+const VMTRC_OPTION_TOKEN = 'vemetric_project_token';
 const VMTRC_OPTION_HOST = 'vemetric_host';
 const VMTRC_OPTION_SCRIPT_URL = 'vemetric_script_url';
 const VMTRC_OPTION_TRACK_PAGEVIEWS = 'vemetric_track_pageviews';

@@ -62,7 +62,7 @@ class ScriptLoader {
                     $track_data_attributes,
                     $mask_paths
                 );
-                return str_replace( '<script src="', '<script defer ' . $attr . ' src="', $tag );
+                return str_replace( 'script src="', 'script defer ' . $attr . ' src="', $tag );
             },
             10,
             3
