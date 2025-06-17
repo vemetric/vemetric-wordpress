@@ -24,6 +24,12 @@ This is the official WordPress plugin for Vemetric, that automatically adds Veme
 3. Provide your Vemetric project token in the plugin settings. (You can find it in your Vemetric project settings)
 4. You're ready to track your website's traffic and user interactions. Vemetric automatically adds the script to your website.
 
+== Screenshots ==
+
+1. Vemetric Analytics Dashboard
+2. Vemetric User Journey Page
+3. Vemetric WordPress Plugin Settings
+
 == Frequently Asked Questions ==
 
 = What kind of Analytics does Vemetric provide? =
