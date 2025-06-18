@@ -39,19 +39,25 @@ Vemetric provides you with Web- and Product Analytics. Doesn't matter if you're 
 By default Vemetric doesn't use any kind of Cookies and all our servers are hosted in the EU. Vemetric is therefore GDPR compliant. For identifying recurring visitors on the same day, we generate a unique hash for each of your visitors with a daily rotating salt.
 
 = Can I see a demo of Vemetric in action? =
-Yes, you can take a look at a public dashboard with real live data here: https://app.vemetric.com/public/snappify.com
+Yes, you can take a look at a [public dashboard with real live data](https://app.vemetric.com/public/snappify.com)
+
+= Is Vemetric Open Source? =
+Yes, Vemetric is open source and licensed under the AGPLv3 license. You can find the code on [GitHub](https://github.com/vemetric/vemetric).
 
 = Where can I find the Terms of Service for Vemetric? =
-You can review the Vemetric Terms of Service here: https://vemetric.com/legal/terms-of-service
+You can review the [Vemetric Terms of Service](https://vemetric.com/legal/terms-of-service)
 
 == Upgrade Notice ==
 Please make sure you make a backup of your database before updating any version to ensure that none of your data is lost.
 
 == Changelog ==
+= 1.0.1 =
+Updated FAQs.
+
 = 1.0.0 =
 Initial release.
 
 == Support ==
 For any issues or support requests, please reach out to us through one of the following channels:
-- Chat with us via the chat widget on vemetric.com: https://vemetric.com
-- Open an issue in our GitHub repository: https://github.com/vemetric/vemetric-wordpress
+- Chat with us via the chat widget on [vemetric.com](https://vemetric.com)
+- Open an issue in our [GitHub repository](https://github.com/vemetric/vemetric-wordpress)
