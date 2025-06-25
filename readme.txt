@@ -59,5 +59,5 @@ Initial release.
 
 == Support ==
 For any issues or support requests, please reach out to us through one of the following channels:
-- Chat with us via the chat widget on [vemetric.com](https://vemetric.com)
-- Open an issue in our [GitHub repository](https://github.com/vemetric/vemetric-wordpress)
+- Chat with us via the chat widget on [our Website](https://vemetric.com)
+- Open an issue in our [GitHub repository](https://github.com/vemetric/vemetric)
