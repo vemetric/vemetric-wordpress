@@ -13,4 +13,5 @@ You can also checkout the package on the [Wordpress Plugin Directory](https://wo
 1. Add a new Changelog Entry in the `readme.txt`
 2. Start the `Release` GitHub Action
 3. Download the .zip file from the GitHub Action Artifacts
-4. Submit the changes to SVN as described [here](https://developer.wordpress.org/plugins/wordpress-org/how-to-use-subversion/#editing-existing-files).
+4. Test the changes on a local Wordpress Instance
+5. Submit the changes to SVN as described [here](https://developer.wordpress.org/plugins/wordpress-org/how-to-use-subversion/#editing-existing-files).
