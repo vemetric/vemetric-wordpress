@@ -76,7 +76,7 @@ jobs:
           git push origin main
 
       - name: Install dependencies
-        run: rm -r ./vendor && composer install --prefer-dist --no-interaction --no-progress --no-dev
+        run: composer install --prefer-dist --no-interaction --no-progress --no-dev
 
       - name: Create zip file
         run: |
