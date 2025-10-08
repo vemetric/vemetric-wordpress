@@ -51,6 +51,9 @@ You can review the [Vemetric Terms of Service](https://vemetric.com/legal/terms-
 Please make sure you make a backup of your database before updating any version to ensure that none of your data is lost.
 
 == Changelog ==
+= 1.0.5 =
+Provide all Vemetric Options via inline script.
+
 = 1.0.4 =
 Fixed external dependencies.
 
