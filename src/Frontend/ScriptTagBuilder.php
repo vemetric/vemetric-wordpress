@@ -42,4 +42,35 @@ class ScriptTagBuilder {
 
         return $attr;
     }
+
+    public static function buildOptions( $token, $host, $track_pageviews, $track_outbound, $track_data_attributes, $mask_paths ) {
+        $options = [
+            'sdk' => 'wordpress',
+            'token' => $token,
+        ];
+
+        if ( !empty( $host ) ) {
+            $options['host'] = $host;
+        }
+
+        if ( $track_pageviews === false ) {
+            $options['trackPageViews'] = false;
+        }
+
+        if ( $track_outbound === false ) {
+            $options['trackOutboundLinks'] = false;
+        }
+
+        if ( $track_data_attributes === false ) {
+            $options['trackDataAttributes'] = false;
+        }
+
+        if ( !empty( $mask_paths ) ) {
+            $maskPaths = explode( ',', $mask_paths );
+            $maskPaths = array_map( 'trim', $maskPaths );
+            $options['maskPaths'] = $maskPaths;
+        }
+
+        return $options;
+    }
 } 

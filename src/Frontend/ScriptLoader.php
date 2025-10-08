@@ -35,7 +35,7 @@ class ScriptLoader {
             false
         );
 
-        $options_json = wp_json_encode( self::buildOptions( $token, $host, $track_pageviews, $track_outbound, $track_data_attributes, $mask_paths ), JSON_UNESCAPED_SLASHES );
+        $options_json = wp_json_encode( ScriptTagBuilder::buildOptions( $token, $host, $track_pageviews, $track_outbound, $track_data_attributes, $mask_paths ), JSON_UNESCAPED_SLASHES );
 
         wp_add_inline_script(
             VMTRC_SCRIPT_HANDLE,
@@ -70,36 +70,5 @@ class ScriptLoader {
             10,
             3
         );
-    }
-
-    private static function buildOptions( $token, $host, $track_pageviews, $track_outbound, $track_data_attributes, $mask_paths ) {
-        $options = [
-            'sdk' => 'wordpress',
-            'token' => $token,
-        ];
-
-        if ( !empty( $host ) ) {
-            $options['host'] = $host;
-        }
-
-        if ( $track_pageviews === false ) {
-            $options['trackPageViews'] = false;
-        }
-
-        if ( $track_outbound === false ) {
-            $options['trackOutboundLinks'] = false;
-        }
-
-        if ( $track_data_attributes === false ) {
-            $options['trackDataAttributes'] = false;
-        }
-
-        if ( !empty( $mask_paths ) ) {
-            $maskPaths = explode( ',', $mask_paths );
-            $maskPaths = array_map( 'trim', $maskPaths );
-            $options['maskPaths'] = $maskPaths;
-        }
-
-        return $options;
     }
 }
