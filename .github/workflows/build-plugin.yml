@@ -43,7 +43,7 @@ jobs:
       - name: Install production dependencies
         run: composer install --prefer-dist --no-interaction --no-progress --no-dev
 
-      - name: Create plugin ZIP
+      - name: Prepare plugin artifact
         run: |
           mkdir -p build/vemetric
           rsync -a ./ build/vemetric/ \
@@ -58,12 +58,10 @@ jobs:
             --exclude='.gitignore' \
             --exclude='.phpunit.result.cache' \
             --exclude='.DS_Store'
-          cd build
-          zip -r vemetric.zip vemetric
 
-      - name: Upload plugin ZIP
+      - name: Upload plugin artifact
         uses: actions/upload-artifact@v4
         with:
-          name: vemetric-plugin
-          path: build/vemetric.zip
+          name: vemetric
+          path: build/vemetric/**
           if-no-files-found: error

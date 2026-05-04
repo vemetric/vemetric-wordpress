@@ -12,8 +12,8 @@ You can also checkout the package on the [Wordpress Plugin Directory](https://wo
 
 1. Open the `Build Plugin ZIP` GitHub Action
 2. Run the workflow from the branch you want to test
-3. Download the `vemetric-plugin` artifact
-4. Upload the contained `vemetric.zip` file to your local WordPress instance
+3. Download the `vemetric` artifact
+4. Upload the downloaded `vemetric.zip` file to your local WordPress instance
 
 ## How to Release a new Version
 
