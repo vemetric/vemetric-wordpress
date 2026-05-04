@@ -605,16 +605,16 @@
         },
         {
             "name": "vemetric/vemetric-php",
-            "version": "v0.2.1",
+            "version": "v0.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/vemetric/vemetric-php.git",
-                "reference": "63bb3ab77820e9cc7a6e9180fdbe80e977fbcfa0"
+                "reference": "2723876aa32283fb7138fa8932cd370846c75f0f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vemetric/vemetric-php/zipball/63bb3ab77820e9cc7a6e9180fdbe80e977fbcfa0",
-                "reference": "63bb3ab77820e9cc7a6e9180fdbe80e977fbcfa0",
+                "url": "https://api.github.com/repos/vemetric/vemetric-php/zipball/2723876aa32283fb7138fa8932cd370846c75f0f",
+                "reference": "2723876aa32283fb7138fa8932cd370846c75f0f",
                 "shasum": ""
             },
             "require": {
@@ -646,7 +646,7 @@
                 "issues": "https://github.com/vemetric/vemetric-php/issues",
                 "source": "https://github.com/vemetric/vemetric-php"
             },
-            "time": "2026-05-04T10:06:42+00:00"
+            "time": "2026-05-04T11:10:17+00:00"
         }
     ],
     "packages-dev": [
