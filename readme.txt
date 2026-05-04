@@ -2,7 +2,7 @@
 Contributors: vemetric
 Tags: vemetric, analytics, web analytics, stats, privacy
 Requires at least: 6.4
-Tested up to: 6.8
+Tested up to: 6.9
 Requires PHP: 8.1
 Stable tag: 1.0.5
 License: MIT
@@ -51,6 +51,9 @@ You can review the [Vemetric Terms of Service](https://vemetric.com/legal/terms-
 Please make sure you make a backup of your database before updating any version to ensure that none of your data is lost.
 
 == Changelog ==
+= 1.0.6 =
+Update dependencies.
+
 = 1.0.5 =
 Provide all Vemetric Options via inline script.
 

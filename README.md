@@ -8,6 +8,13 @@ Learn more about the Plugin in the [official docs](https://vemetric.com/docs/ins
 
 You can also checkout the package on the [Wordpress Plugin Directory](https://wordpress.org/plugins/vemetric).
 
+## How to Build a Test ZIP
+
+1. Open the `Build Plugin ZIP` GitHub Action
+2. Run the workflow from the branch you want to test
+3. Download the `vemetric-plugin` artifact
+4. Upload the contained `vemetric.zip` file to your local WordPress instance
+
 ## How to Release a new Version
 
 1. Add a new Changelog Entry in the `readme.txt`

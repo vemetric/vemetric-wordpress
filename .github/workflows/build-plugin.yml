@@ -1,0 +1,69 @@
+name: Build Plugin ZIP
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.1"
+          extensions: curl
+          coverage: none
+
+      - name: Install test dependencies
+        run: composer install --prefer-dist --no-interaction --no-progress
+
+      - name: Composer validate
+        run: composer validate --strict
+
+      - name: PHPUnit
+        run: composer test
+
+  build:
+    needs: test
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.1"
+          extensions: curl
+          coverage: none
+
+      - name: Install production dependencies
+        run: composer install --prefer-dist --no-interaction --no-progress --no-dev
+
+      - name: Create plugin ZIP
+        run: |
+          mkdir -p build/vemetric
+          rsync -a ./ build/vemetric/ \
+            --exclude='.git/' \
+            --exclude='.github/' \
+            --exclude='build/' \
+            --exclude='tests/' \
+            --exclude='wp-assets/' \
+            --exclude='*.zip' \
+            --exclude='README.md' \
+            --exclude='phpunit.xml' \
+            --exclude='.gitignore' \
+            --exclude='.phpunit.result.cache' \
+            --exclude='.DS_Store'
+          cd build
+          zip -r vemetric.zip vemetric
+
+      - name: Upload plugin ZIP
+        uses: actions/upload-artifact@v4
+        with:
+          name: vemetric-plugin
+          path: build/vemetric.zip
+          if-no-files-found: error
