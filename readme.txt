@@ -2,7 +2,7 @@
 Contributors: vemetric
 Tags: vemetric, analytics, web analytics, stats, privacy
 Requires at least: 6.4
-Tested up to: 7.0
+Tested up to: 7.1
 Requires PHP: 8.1
 Stable tag: 1.0.7
 License: MIT
@@ -51,6 +51,9 @@ You can review the [Vemetric Terms of Service](https://vemetric.com/legal/terms-
 Please make sure you make a backup of your database before updating any version to ensure that none of your data is lost.
 
 == Changelog ==
+= 1.0.8 =
+Update the Vemetric PHP SDK to 0.2.3 and add compatibility with WordPress 7.1.
+
 = 1.0.7 =
 Increase supported Wordpress Version.
 
